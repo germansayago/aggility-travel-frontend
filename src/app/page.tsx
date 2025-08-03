@@ -68,13 +68,11 @@ export default function Home() {
 
     try {
       // Realiza la llamada a la API del backend
-      const response = await fetch("/api/chat", {
+      const response = await fetch("http://localhost:8000/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           question: input,
-          chat_history: messages,
-          userId: userId, // <-- Incluye el userId en la solicitud
         }),
       });
 
